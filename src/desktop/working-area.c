@@ -23,6 +23,9 @@
 */
 
 # include <gdk/gdk.h>
+
+//wayland ifdef
+#ifdef DESKTOP_INTEGRATION
 # include <gdk/gdkx.h>
 # include <X11/Xlib.h>
 # include <X11/Xutil.h>
@@ -134,6 +137,12 @@ gf_display_get_workarea(GdkScreen* g_screen, GdkRectangle *rect) {
 
 	return TRUE;
 }
+#else //wayland dummy implementation
+gboolean gf_display_get_workarea( GdkScreen* screen, GdkRectangle* *rect )
+{
+    return FALSE;
+}
+#endif
 
 void get_working_area( GdkScreen* screen, GdkRectangle* area )
 {

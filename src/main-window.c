@@ -19,8 +19,12 @@
 #include <glib-object.h>
 #include <gdk/gdk.h>
 #include <gdk/gdkkeysyms.h>
-#include <gdk/gdkx.h>  // XGetWindowProperty
-#include <X11/Xatom.h> // XA_CARDINAL
+
+//wayland ifdef
+#ifdef GDK_WINDOWING_X11
+    include <gdk/gdkx.h>  // XGetWindowProperty
+    include <X11/Xatom.h> // XA_CARDINAL
+#endif
 
 #include <string.h>
 
@@ -4042,6 +4046,8 @@ const GList* fm_main_window_get_all()
     return all_windows;
 }
 
+//wayland ifdef
+#ifdef GTK_WINDOWING_X11
 static long get_desktop_index( GtkWindow* win )
 {
     long desktop = -1;
@@ -4124,6 +4130,12 @@ FMMainWindow* fm_main_window_get_on_current_desktop()
     // revert to dumb if one or more window desktops unreadable
     return invalid ? fm_main_window_get_last_active() : NULL;
 }
+#else    //wayland dummy implementation
+FMMainWindow* fm_main_window_get_on_current_desktop()
+{
+    return fm_main_window_get_last_active();
+}
+#endif
 
 enum {
     TASK_COL_STATUS,
