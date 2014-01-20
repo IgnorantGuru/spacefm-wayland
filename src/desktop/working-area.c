@@ -24,6 +24,9 @@
 
 # include <gdk/gdk.h>
 
+/* TODO: These wayland ifdefs are probably unneeded as this working-area file
+ * should not be built with --disable-desktop?  Maybe a mistake in the build
+ * system. */
 //wayland ifdef
 #ifdef DESKTOP_INTEGRATION
 # include <gdk/gdkx.h>
