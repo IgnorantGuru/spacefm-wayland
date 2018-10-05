@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "settings.h": "c",
+        "ptk-file-browser.h": "c",
+        "vfs-dir.h": "c",
+        "vfs-file-monitor.h": "c",
+        "ptk-location-view.h": "c",
+        "vfs-volume.h": "c"
+    }
+}

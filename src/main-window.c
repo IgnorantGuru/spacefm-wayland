@@ -5,7 +5,7 @@
 */
 
 #ifdef HAVE_CONFIG_H
-#  include <config.h>
+#include <config.h>
 #endif
 
 #include <libintl.h>
@@ -22,8 +22,8 @@
 
 //wayland ifdef
 #ifdef GDK_WINDOWING_X11
-    include <gdk/gdkx.h>  // XGetWindowProperty
-    include <X11/Xatom.h> // XA_CARDINAL
+    #include <gdk/gdkx.h>  // XGetWindowProperty
+    #include <X11/Xatom.h> // XA_CARDINAL
 #endif
 
 #include <string.h>
