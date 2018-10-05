@@ -1,0 +1,30 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/src",
+                "${workspaceFolder}/src/vfs",
+                "${workspaceFolder}/src/ptk",
+                "${workspaceFolder}/src/exo",
+                "${workspaceFolder}/src/compat",
+                "${workspaceFolder}/src/desktop",
+                "${workspaceFolder}/src/mime-type",
+                "/usr/include/gtk-3.0",
+                "/usr/lib/x86_64-linux-gnu/glib-2.0/include",
+                "/usr/include/atk-1.0",
+                "/usr/include/gdk-pixbuf-2.0",
+                "/usr/include/pango-1.0",
+                "/usr/include/cairo",
+                "/usr/include/glib-2.0"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}
